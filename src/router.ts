@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import DataView from './views/DataView/DataView.vue';
-import DataSearch from './views/DataSearch/DataSearch.vue';
-import Audit from './views/Audit/Audit.vue';
-import SystemManage from './views/SystemManage/SystemManage.vue';
+import DataView from './views/data-view/index.vue';
+import DataSearch from './views/data-search/index.vue';
+import Audit from './views/audit/index.vue';
+import SystemManage from './views/syste-mmanage/index.vue';
 Vue.use(Router);
 
 export default new Router({

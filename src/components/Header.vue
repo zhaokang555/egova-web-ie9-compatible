@@ -7,15 +7,35 @@
             <router-link to="/audit" exact>审核处理</router-link>
             <router-link to="/system-manage" exact>系统管理</router-link>
         </div>
+        <div class="user-photo" :style="{backgroundImage: 'url(' + userPhoto + ')'}"></div>
+        <div class="user-name">{{userName}}</div>
+        <div class="time">{{time}}</div>
     </div>
 </template>
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
+    import moment from "moment";
+    import Timer = NodeJS.Timer;
 
     @Component
     export default class Header extends Vue {
-
+        public tid!: Timer;
+        public time = "";
+        public get userName() {
+            return this.$store.state.user.userName;
+        }
+        public get userPhoto() {
+            return this.$store.state.user.userPhoto;
+        }
+        private mounted() {
+            this.tid = setInterval(() => {
+                this.time = moment().format("YYYY-MM-DD HH:mm:ss");
+            }, 1000);
+        }
+        private beforeDestroy() {
+            clearInterval(this.tid);
+        }
     }
 </script>
 
@@ -47,7 +67,7 @@
                 /*line-height: .47rem;*/
                 background-image: url("../assets/images/header/link.png");
                 background-size: 100% 100%;
-                color: #cccccc;
+                color: #aaa;
                 margin-right: .28rem;
                 text-align: center;
                 text-decoration: none;
@@ -56,6 +76,33 @@
                     text-shadow: 0 0 .08rem #ffffff;
                 }
             }
+        }
+        .time {
+            position: relative;
+            float: right;;
+            top: -0.76rem;
+            margin-right: .4rem;
+            text-shadow: 0 0 .08rem #ffffff;
+            font-size: .16rem;
+        }
+        .user-name {
+            position: relative;
+            float: right;
+            top: -0.76rem;
+            margin-right: .18rem;
+            /*text-shadow: 0 0 .08rem #ffffff;*/
+            font-size: .16rem;
+        }
+        .user-photo {
+            position: relative;
+            float: right;
+            top: -0.82rem;
+            margin-right: .32rem;
+            width: .36rem;
+            height: .36rem;
+            border-radius: .18rem;
+            background-size: 100% 100%;
+            cursor: pointer;
         }
     }
 </style>
