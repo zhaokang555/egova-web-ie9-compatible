@@ -1,36 +1,29 @@
-<template>
-    <div class="device-online">
-        <div class="title">今日设备在线统计</div>
-        <div class="lines">
-            <div class="line">
-                <div class="icon"></div>
-                <div class="text">设备总数</div>
-                <div class="bar-wrapper">
-                    <div class="bar" :style="{width: 100 + '%'}"></div>
-                </div>
-                <div class="count">10000</div>
-            </div>
-            <div class="line">
-                <div class="icon"></div>
-                <div class="text">设备在线数</div>
-                <div class="bar-wrapper">
-                    <div class="bar" :style="{width: 77 + '%'}"></div>
-                </div>
-                <div class="count">7777</div>
-            </div>
-            <div class="line">
-                <div class="icon"></div>
-                <div class="text">设备离线数</div>
-                <div class="bar-wrapper">
-                    <div class="bar" :style="{width: 33 + '%'}"></div>
-                </div>
-                <div class="count">3333</div>
-            </div>
-        </div>
-    </div>
+<template lang="pug">
+    .device-online
+        .title 今日设备在线统计
+        .lines
+            .line
+                .icon
+                .text 设备总数
+                .bar-wrapper
+                    .bar(:style="{width: 100 + '%'}")
+                .count 10000
+            .line
+                .icon
+                .text 设备在线数
+                .bar-wrapper
+                    .bar(:style="{width: 77 + '%'}")
+                .count 7777
+            .line
+                .icon
+                .text 设备离线数
+                .bar-wrapper
+                    .bar(:style="{width: 33 + '%'}")
+                .count 3333
 </template>
+
 <script lang="ts">
-    import { Component, Prop, Vue } from 'vue-property-decorator';
+    import {Component, Prop, Vue} from 'vue-property-decorator';
 
     @Component
     export default class DeviceOnline extends Vue {
