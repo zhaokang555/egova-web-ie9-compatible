@@ -20,19 +20,15 @@
     }
 </script>
 
-<style lang="less" scoped>
-    .data-view {
-        position: absolute;
-        & > div {
-            position: absolute;
-        }
-        .device-online {
-            left: .05rem;
-            top: .08rem;
-        }
-        .audit-analysis {
-            left: .09rem;
-            top: 3.48rem;
-        }
-    }
+<style lang="sass" scoped>
+    .data-view
+        position: absolute
+        & > div
+            position: absolute
+        .device-online
+            left: .05rem
+            top: .08rem
+        .audit-analysis
+            left: .09rem
+            top: 3.48rem
 </style>
