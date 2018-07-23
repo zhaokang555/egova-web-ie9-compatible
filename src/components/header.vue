@@ -83,7 +83,7 @@
             top: -0.76rem;
             margin-right: .4rem;
             text-shadow: 0 0 .08rem #ffffff;
-            font-size: .16rem;
+            font-size: .18rem;
         }
         .user-name {
             position: relative;
@@ -91,7 +91,7 @@
             top: -0.76rem;
             margin-right: .18rem;
             /*text-shadow: 0 0 .08rem #ffffff;*/
-            font-size: .16rem;
+            font-size: .18rem;
         }
         .user-photo {
             position: relative;

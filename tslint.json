@@ -16,6 +16,7 @@
         "object-literal-sort-keys": false,
         "no-console": false,
         "arrow-parens": false,
-        "trailing-comma": false
+        "trailing-comma": false,
+        "no-any": true
     }
 }
