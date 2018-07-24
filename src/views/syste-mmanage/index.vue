@@ -1,29 +1,13 @@
 <template>
-    <div class="system-manage">
-        {{msg}}
-        <Button>Default</Button>
-        <Button type="primary">Primary</Button>
-        <Button type="ghost">Ghost</Button>
-        <Button type="dashed">Dashed</Button>
-        <Button type="text">Text</Button>
-        <br><br>
-        <Button type="info">Info</Button>
-        <Button type="success">Success</Button>
-        <Button type="warning">Warning</Button>
-        <Button type="error">Error</Button>
-         <Table :columns="columns" :data="data"></Table>
-    </div>
 </template>
 <template src="./index.html"></template>
 
 <style scoped src="./index.less"></style>
-
-
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-
+    import View from '@/view';
     @Component
-    export default class SystemManage extends Vue {
+    export default class SystemManage extends View {
         public msg = "系统管理";
         public columns = [
             {
@@ -65,7 +49,7 @@
                             },
                             on: {
                                 click: () => {
-                                    // this.show(params.index)
+                                    this.show(params.index);
                                 }
                             }
                         }, 'View'),
@@ -76,7 +60,7 @@
                             },
                             on: {
                                 click: () => {
-                                    // this.remove(params.index)
+                                    this.remove(params.index);
                                 }
                             }
                         }, 'Delete')
@@ -110,15 +94,15 @@
                 date: '2016-10-04'
             }
         ];
-        // public show(index) {
-        //         this.$modal.info({
-        //             title: 'User Info',
-        //             content: `Name：${this.data6[index].name}<br>Age：${this.data6[index].age}<br>Address：${this.data6[index].address}`
-        //         })
-        // }
-        // public remove (index) {
-        //     this.data.splice(index, 1);
-        // }
+        public show(index: number) {
+                this.$modal.info({
+                    title: 'User Info',
+                    content: `Name：${this.data[index].name}<br>Age：${this.data[index].age}<br>Address：${this.data[index].address}`
+                })
+        }
+        public remove (index: number) {
+            this.data.splice(index, 1);
+        }
     }
 </script>
 
