@@ -46,6 +46,8 @@
         height: .6rem;
         background-image: url("../assets/images/header/bg.png");
         background-size: 100% 100%;
+        position: relative;
+        top: .05rem;
         .title {
             position: relative;
             left: .89rem;
@@ -56,7 +58,7 @@
         .links {
             position: relative;
             left: 5.85rem;
-            top: -0.42rem;
+            top: -0.46rem;
 
             a {
                 font-size: .2rem;

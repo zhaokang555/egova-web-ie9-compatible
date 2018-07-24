@@ -8,13 +8,14 @@
 <script lang="ts">
     import Header from "@/components/header.vue";
     import { Component, Prop, Vue } from 'vue-property-decorator';
+    import View from "./view";
 
     @Component({
         components: {
             Header,
         },
     })
-    export default class App extends Vue {
+    export default class App extends View {
 
     }
 </script>

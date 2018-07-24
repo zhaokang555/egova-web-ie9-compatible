@@ -14,6 +14,10 @@
          <Table :columns="columns" :data="data"></Table>
     </div>
 </template>
+<template src="./index.html"></template>
+
+<style scoped src="./index.less"></style>
+
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -61,7 +65,7 @@
                             },
                             on: {
                                 click: () => {
-                                    this.show(params.index)
+                                    // this.show(params.index)
                                 }
                             }
                         }, 'View'),
@@ -72,7 +76,7 @@
                             },
                             on: {
                                 click: () => {
-                                    this.remove(params.index)
+                                    // this.remove(params.index)
                                 }
                             }
                         }, 'Delete')
@@ -117,3 +121,4 @@
         // }
     }
 </script>
+
